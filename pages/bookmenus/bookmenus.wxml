@@ -1,0 +1,27 @@
+<view class="chaper_menus_container">
+ <view class="chaper_menus_grids">
+       <view class='chaper_menus_title'>{{bookname}}</view>
+       <view class='k'></view>
+       <scroll-view scroll-y>
+       <view class='chaper_menus_grid'>
+          <block wx:for="{{chaper_menu_list}}" wx:key="">
+          <navigator url='../../pages/chaper/chaper?b_id={{item.b_id}}&chaper_text={{item.chaper_text}}&chaper_id={{item.id}}&chaper_name={{item.chaper_name}}'>
+            <view class='chaper_menus_chaper_name'>{{item.chaper_name}}</view>
+          </navigator>
+          </block>
+        </view>
+        </scroll-view>
+        <view class='chaper_menus_footer'>
+            <button class='previous_page'>
+            上一页
+            </button>
+            <picker class="chaper_menus_page_count" value="{{index}}" range="{{page_count_list}}"bindchange="bindPickerChange">
+                <view class="picker" >{{page_count_list[index]}}</view>
+                <image src='images/selected.png'></image>      
+            </picker>
+            <button class='next_page'>
+            下一页
+            </button>
+        </view>
+ </view>
+</view>

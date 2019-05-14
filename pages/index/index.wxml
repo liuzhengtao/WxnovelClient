@@ -1,0 +1,21 @@
+<view class='index-container'>
+     <view class='index-header'>
+        <block wx:for="{{index_hearders}}" wx:key="">
+        <navigator url='../../pages/chaper/chaper?b_id={{item.b_id}}&chaper_id={{item.chaper_id}}&cat_name={{item.cat_name}}&b_name={{item.b_name}}&chaper_text={{item.chaper_text}}&chaper_name={{item.chaper_name}}'>
+        <view class='one-book'>
+             <image src="{{item.b_cover}}"></image>
+        </view>
+        </navigator>
+        </block>
+     </view>
+     <view class='index-cd'></view>
+     <view class='index-section'>
+         <block wx:for="{{index_sections}}" wx:key="">
+         <navigator url='../../pages/chaper/chaper?b_id={{item.b_id}}&chaper_id={{item.chaper_id}}&b_name={{item.b_name}}&chaper_text={{item.chaper_text}}&cat_name={{item.cat_name}}&chaper_name={{item.chaper_name}}'>
+         <view class='add-book'>
+                <image src="{{item.b_cover}}"></image>
+         </view>
+         </navigator>
+         </block>
+     </view>
+</view>

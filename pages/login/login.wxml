@@ -1,0 +1,13 @@
+<view wx:if="{{showModel}}" class='model'>
+<view class='login_container'>
+<view class='modelTitle'>
+   获取微信授权信息
+</view>
+<view class='btns'>
+<button open-type='getUserInfo' class='login'
+ bindgetuserinfo='agreeGetUser' lang='zh_CN'>授权登录</button> 
+</view>
+</view>
+</view>
+
+

@@ -1,0 +1,21 @@
+<!--pages/test/test.wxml-->
+<view class="books-container">
+  <view class="section" wx:for="{{books_list}}" wx:key="name">
+      <navigator url="../../pages/bookmenus/bookmenus?b_id={{item.id}}&b_name={{item.b_name}}&cat_name={{item.cat_name}}">
+         <view class="bookui_grid">
+             <view class="bookui_grid_icon">
+                  <image src=" {{item.b_cover}}" mode="scaleToFill" />
+            </view>
+            <view class='bookui_grid_title'>
+                  <text class="bookui_grid_name">{{item.b_name}}</text>
+                  <text class='bookui_grid_introduce'>{{item.b_introduce}}</text>
+                  <text style="height:10px;"></text>
+                  <image src='images/author.png' class="bookui_grid_author_icon"/>
+                  <text class="bookui_grid_author"> {{item.b_author}}</text>
+                  <view class="bookui_grid_score">{{item.b_score}}</view>    
+            </view>   
+         </view>
+      </navigator>
+  </view>
+</view>
+

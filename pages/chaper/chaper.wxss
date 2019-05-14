@@ -1,0 +1,148 @@
+/* pages/chaper/chaper.wxss */
+page{
+  background: #E0EEEE;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  /* font-size: 16px; */
+  /* width: 100%;
+  height: 100%; */
+}
+.chaper_name{
+  color: red;
+  position: relative;
+  left: 80px;
+}
+rich-text{
+  text-indent: 2em;
+  display: block;
+ padding-left: 10px;
+}
+.next_chaper{
+  /* position: fixed;
+  bottom: 0; */
+  height: 30px;
+  width: 100%;
+  padding: 10px 0px 0px 0px;
+  background:#E0EEEE;
+}
+.next_chaper .chaper_button{
+ font-size: 10px;
+  display: block;
+  width: 70px;
+  height: 30px;
+  position: absolute;
+  background: #D1EEEE;
+}
+.next_chaper .next_btn{
+   right: 35%;
+}
+.next_chaper .pre_btn{
+  left: 15%;  
+}
+.next_chaper .bookmenus_btn{
+  right: 5%;
+}
+
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.shezhi{
+  font-size: 12px;
+  text-align: center;
+  height: 26px;
+  width: 30px;
+  background: lightpink;
+  border-radius: 10px;
+  position: absolute;
+  right: 1px;
+  z-index: 1;
+}
+
+.shezhi-text{
+ position: fixed;
+ bottom: 0;
+ height: 80px;
+ width: 100%;
+ background:white;
+ display: flex;
+ flex-direction: row;
+}
+.font{
+  display: flex;
+  flex-direction: row;
+  padding-left: 5px;
+}
+.minus{
+  padding: 0;
+  margin: 0;
+  height: 26px;
+  width: 30px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.black{
+  background: black;
+}
+.pink{
+  background: #FFFACD;
+}
+.green{
+  background: #CD8500;
+}
+.blue{
+  background: #B2DFEE;
+}
+.feng{
+  background: #FFE4E1;
+}
+.zhiti{
+  display: flex;
+  flex-direction: row;
+  padding-left: 5px;
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}
+.jianhao{
+  padding: 0;
+  height: 20px;
+  width: 60px;
+  margin: 0 auto;
+  font-size: 12px;
+  font-weight: 200;
+  border-radius: 10px;
+  position: absolute;
+  left: 3px;
+  top:55px;
+}
+.jiahao{
+  padding: 0;
+  height: 20px;
+  width: 60px;
+  margin: 0 auto;
+  font-size: 12px;
+  font-weight: 200;
+  border-radius: 10px;
+  position: absolute;
+  left: 140px;
+  top:55px;
+}
+.zitixianshi{
+  padding: 0;
+  height: 20px;
+  width: 40px;
+  padding-left:20px;
+  padding-top: 3px; 
+  font-size: 12px;
+  font-weight: 200;
+  border-radius: 10px;
+  position: absolute;
+  left: 70px;
+  top:55px;
+  border: 1px solid black;
+}
+

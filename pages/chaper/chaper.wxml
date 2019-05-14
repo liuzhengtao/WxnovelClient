@@ -1,0 +1,38 @@
+<!--pages/chaper/chaper.wxml-->
+<view class='chaper_container' style="background:{{bg}};color:{{c}}"> 
+      <view class='content' style="font-size:{{font_big}}px">
+       <view class='shezhi' bindtap='shezhi'>设置</view>
+       <scroll-view scroll-y scroll-top="{{scrollTop}}" style="height:{{scrollHeight}}px;">
+       <view class='chaper_name'>{{chaper_name}}</view>
+        <rich-text nodes="{{chaper_text}}" bindtap='bindcontent'></rich-text>
+       </scroll-view>
+      </view>
+      <view class="next_chaper">
+        <button bindtap='bindpreviousChaperTap'class="chaper_button pre_btn">上一章</button>
+        <button bindtap='bindNextChaperTap'class="chaper_button next_btn">下一章</button>
+        <button bindtap='bindBookMenusTap'class="chaper_button bookmenus_btn">目录</button>
+      </view>
+      <view class='shezhi-text' style='display:{{isdisplay}};'>
+         <view class='font'>
+             背景
+             <text style='width:10px;'></text> 
+             <button class='minus pink' bindtap='bindpink'></button>
+                  <text style='width:10px;'></text>
+                 <button class='minus green' bindtap='bindgreen' ></button>
+                  <text style='width:10px;'></text>
+                 <button class='minus blue' bindtap='bindblue'></button>
+                  <text style='width:10px;'></text>
+                 <button class='minus black' bindtap='bindblack'></button>
+                  <text style='width:10px;'></text>
+                 <button class='minus feng' bindtap='bindfeng'></button>
+        </view>
+        <view class='ziti'>
+        字体
+         <text style='width:10px;'></text>
+         <!-- <button type="default" class='jianhao' bindtap='bindJianHao' value="-减"></button> -->
+         <button type="default" class='jianhao' bindtap='bindJianHao'>减号-</button>
+         <text class='zitixianshi'>{{font_big}}</text>
+         <button type="default" class='jiahao' bindtap='bindJiaHao'>加号+</button>
+        </view>
+      </view>
+</view>

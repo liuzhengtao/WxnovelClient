@@ -1,0 +1,90 @@
+page{
+  height: 100%;
+}
+.chaper_menus_grids{
+   height: 100%;
+   width: 100%;
+}
+.chaper_menus_grid{
+   display: flex;
+   flex-direction: column;
+}
+.k{
+  height: 40px;
+}
+.chaper_menus_title{
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 1;
+  background: white;
+  height: 30px;
+  font-size: 16px;
+  font-stretch:semi-condensed;
+  color:red;
+  letter-spacing:1px;
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  padding:10px 0px 0px 0px;
+}
+.chaper_menus_chaper_name{
+  height: 30px;
+  font-size: 14px;
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  padding: 10px 0px 0px 0px;
+}
+.chaper_menus_chaper_name:hover{
+  background: lightblue;
+}
+.chaper_menus_footer{
+ position: fixed;
+ bottom: 0;
+ height: 50px;
+ width: 100%;
+ background:white;
+ display: flex;
+ flex-direction: row;
+}
+.previous_page{
+  font-size: 10px;
+  display: block;
+  width: 70px;
+  height: 30px;
+  position: absolute;
+  left: 10px;
+  top:10px;
+}
+.next_page{
+  font-size: 10px;
+  display: block;
+  width: 70px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+.chaper_menus_page_count{
+  display: block;
+  width: 100px;
+  height: 30px;
+  border: 1px solid lightgray;
+  position: absolute;
+  left:120px;
+  top:10px;
+  border-radius: 5px;
+}
+.chaper_menus_page_count image{
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  right: 3px;
+  top: 5px;
+}
+.chaper_menus_page_count .picker{
+  font-size: 14px;
+  position: relative;
+  top:5px;
+  left: 10px;
+}

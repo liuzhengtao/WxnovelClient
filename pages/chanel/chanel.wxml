@@ -1,0 +1,13 @@
+<!--pages/chanel/chanel.wxml-->
+<view class='contain'>
+     <view class='content' style="height:{{height}}px;width:{{width}}px;">
+        <view class="chanel_text">
+            <block wx:for="{{chanel_list}}" wx:key=''>
+          
+              <image wx:if="{{item.id==1}}" src="images/man.png" style="height:30px;width:30px;" data-c_id="{{item.id}}" bindtap='chaneltap'></image>
+              <image wx:if="{{item.id==2}}" src="images/woman.png" style="height:30px;width:30px;" data-c_id="{{item.id}}" bindtap='chaneltap'></image>
+              <text data-c_id="{{item.id}}" bindtap='chaneltap'>{{item.c_name}}</text>
+            </block>
+        </view>
+     </view>
+</view>
