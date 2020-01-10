@@ -60,6 +60,7 @@ Page({
 
   },
   agreeGetUser: function (e) {
+    // console.log(e.detail);
     try {
       wx: wx.setStorageSync('userInfo', e.detail.userInfo);
     } catch (e) {

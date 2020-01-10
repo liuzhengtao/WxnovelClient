@@ -5,7 +5,7 @@
        <scroll-view scroll-y>
        <view class='chaper_menus_grid'>
           <block wx:for="{{chaper_menu_list}}" wx:key="">
-          <navigator url='../../pages/chaper/chaper?b_id={{item.b_id}}&chaper_text={{item.chaper_text}}&chaper_id={{item.id}}&chaper_name={{item.chaper_name}}'>
+          <navigator url='../../pages/chaper/chaper?b_id={{item.b_id}}&chaper_text={{item.chaper_text}}&chaper_id={{item.id}}&chaper_name={{item.chaper_name}}&&chaper_index={{item.chaper_index}}'>
             <view class='chaper_menus_chaper_name'>{{item.chaper_name}}</view>
           </navigator>
           </block>

@@ -16,7 +16,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    var b_name = "重生之";
+    var b_name = "重生";
     util.get_curl(baseurl + '/books/get_books_name', { 'b_name': b_name }, function (res) {
       that.setData({ "books_list": res.data.list });
     });

@@ -61,7 +61,28 @@ rich-text{
   right: 1px;
   z-index: 1;
 }
-
+.playvoice{
+  font-size: 12px;
+  text-align: center;
+  height: 26px;
+  width: 30px;
+  background:red;
+  border-radius: 10px;
+  position: absolute;
+  right: 33px;
+  z-index: 1;
+}
+.stopvoice{
+  font-size: 12px;
+  text-align: center;
+  height: 26px;
+  width: 30px;
+  background:yellow;
+  border-radius: 10px;
+  position: absolute;
+  right: 68px;
+  z-index: 1;
+}
 .shezhi-text{
  position: fixed;
  bottom: 0;

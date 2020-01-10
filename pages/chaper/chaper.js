@@ -2,6 +2,7 @@
 const util = require('../../utils/util.js')
 const app = getApp()
 const baseurl = app.globalData.baseUrl;
+const innerAudioContext = wx.createInnerAudioContext();
 Page({
 
   /**
@@ -23,6 +24,7 @@ Page({
     var chaper_id = options.chaper_id;
     var chaper_name = options.chaper_name;
     var b_id = options.b_id;
+    var chaper_index= options.chaper_index
     app.globalData.b_id=b_id;
     app.globalData.chaper_id=chaper_id
     var book_name = options.b_name;
@@ -33,9 +35,9 @@ Page({
         chaper_name = "";
     }
     if(options.cat_name!=undefined){
-      that.setData({ "chaper_text": chaper_text, "chaper_id": app.globalData.chaper_id,"chaper_name":chaper_name, "cat_name": options.cat_name, "b_id": app.globalData.b_id, "scrollTop": '0', "bg": app.globalData.bg, "c": app.globalData.c, "font_big": app.globalData.font_big });
+      that.setData({ "chaper_text": chaper_text, "chaper_id": app.globalData.chaper_id,"chaper_index":chaper_index,"chaper_name":chaper_name, "cat_name": options.cat_name, "b_id": app.globalData.b_id, "scrollTop": '0', "bg": app.globalData.bg, "c": app.globalData.c, "font_big": app.globalData.font_big });
     }else{
-      that.setData({ "chaper_text": chaper_text, "chaper_id": app.globalData.chaper_id, "chaper_name": chaper_name,"b_id": app.globalData.b_id, "scrollTop": '0', "bg": app.globalData.bg, "c": app.globalData.c, "font_big": app.globalData.font_big });
+      that.setData({ "chaper_text": chaper_text, "chaper_id": app.globalData.chaper_id, "chaper_name": chaper_name,"b_id": app.globalData.b_id, "scrollTop": '0', "bg": app.globalData.bg, "c": app.globalData.c, "font_big": app.globalData.font_big,"chaper_index":chaper_index });
     }
     
     util.get_curl(baseurl + '/books/saveOrUpdateBookRack', { 'b_id': app.globalData.b_id, 'chaper_id': app.globalData.chaper_id, 'openid': app.globalData.openid }, function (res) {
@@ -94,7 +96,7 @@ Page({
   bindNextChaperTap:function(e){
     var that = this;
     var b_id = that.data.b_id;
-    var chaper_id = (parseInt(that.data.chaper_id)+1).toString();
+    var chaper_id = (parseInt(that.data.chaper_index)+1).toString();
     util.get_curl(baseurl + '/books/get_chapers_with_id', { 'b_id': b_id, 'chaper_id': chaper_id }, function (res) {
       var chaper_name = res.data.chaper_name;
       var chaper_text = res.data.chaper_text;
@@ -126,7 +128,7 @@ Page({
   bindpreviousChaperTap: function (e) {
     var that = this;
     var b_id = that.data.b_id;
-    var chaper_id = (parseInt(that.data.chaper_id) - 1).toString();
+    var chaper_id = (parseInt(that.data.chaper_index) - 1).toString();
     util.get_curl(baseurl + '/books/get_chapers_with_id', { 'b_id': b_id, 'chaper_id': chaper_id }, function (res) {
       var chaper_name = res.data.chaper_name;
       var chaper_text = res.data.chaper_text;
@@ -154,6 +156,31 @@ Page({
   shezhi:function(){
     var that = this;
     that.setData({ "isdisplay": "block" });
+  },
+  bindtapplayvoice:function(){
+    var that = this;
+    var chaper_id = app.globalData.chaper_id;
+    var b_id = app.globalData.b_id;
+    util.get_curl(baseurl +'/books/make_word_voice',{'chaper_id':chaper_id,'b_id':b_id},function(res){
+          if(res.data.code==1000){
+            var mp3_file=res.data.data.mp3_url;
+            innerAudioContext.autoplay = true;
+            innerAudioContext.src = mp3_file;
+            innerAudioContext.onPlay(() => {
+              console.log('开始播放')
+            })
+            innerAudioContext.onError((res) => {
+              console.log(res.errMsg)
+              console.log(res.errCode)
+            })
+          }else{
+            console.log('fail');
+          }
+          
+    })
+  },
+  bindtapstopvoice:function(res){
+    innerAudioContext.pause();
   },
   bindblack:function(){
    var that = this;

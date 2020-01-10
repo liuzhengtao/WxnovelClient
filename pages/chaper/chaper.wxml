@@ -2,6 +2,8 @@
 <view class='chaper_container' style="background:{{bg}};color:{{c}}"> 
       <view class='content' style="font-size:{{font_big}}px">
        <view class='shezhi' bindtap='shezhi'>设置</view>
+       <view class='playvoice' bindtap='bindtapplayvoice'>播放</view>
+       <view class='stopvoice' bindtap='bindtapstopvoice'>停止</view>
        <scroll-view scroll-y scroll-top="{{scrollTop}}" style="height:{{scrollHeight}}px;">
        <view class='chaper_name'>{{chaper_name}}</view>
         <rich-text nodes="{{chaper_text}}" bindtap='bindcontent'></rich-text>
